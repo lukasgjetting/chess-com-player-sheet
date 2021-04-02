@@ -13,7 +13,7 @@ const main = async () => {
 	const gamesLength = games.map(getGameLength);
 	const gamesScore = games.map((g) => getGameResult(g, username));
 
-	const movesScore = games.reduce<ChartEntry[]>((arr, game, index) => [
+	const scoreByMoves = games.reduce<ChartEntry[]>((arr, game, index) => [
 		...arr,
 		{
 			x: gamesLength[index],
@@ -21,28 +21,24 @@ const main = async () => {
 		},
 	], []);
 
-	console.log('chart', movesScore);
-
 	const chart = new Chart('chart-canvas', {
-		type: 'scatter',
+		type: 'line',
 		data: {
 			datasets: [{
-				label: 'Score / Number of Moves',
-				data: averageChartEntries(movesScore),
+				label: 'Score',
+				data: averageChartEntries(scoreByMoves),
+				fill: false,
+				borderColor: 'rgb(75, 192, 192)',
 			}],
 		},
 		options: {
 			scales: {
-				yAxes: [{
-					ticks: {
-						beginAtZero: true,
-					},
+				xAxes: [{
+					type: 'linear',
 				}],
 			},
 		},
 	});
 };
-
-console.log(document.querySelector('#chart'));
 
 main();
