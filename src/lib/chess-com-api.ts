@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import { ArchiveGamesResponse, ArchivesListResponse, Game } from '../types';
 
 const API_URL = 'https://api.chess.com/pub';

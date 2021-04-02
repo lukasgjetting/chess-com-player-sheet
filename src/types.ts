@@ -35,3 +35,8 @@ export interface ArchivesListResponse {
 export interface ArchiveGamesResponse {
 	games: Game[];
 }
+
+export interface ChartEntry {
+	x: number;
+	y: number;
+}

@@ -1,4 +1,7 @@
+import Chart from 'chart.js';
 import { getGames } from './lib/chess-com-api';
+import { ChartEntry } from './types';
+import averageChartEntries from './utils/averageChartEntries';
 import getGameLength from './utils/getGameLength';
 import getGameResult from './utils/getGameResult';
 
@@ -10,13 +13,36 @@ const main = async () => {
 	const gamesLength = games.map(getGameLength);
 	const gamesScore = games.map((g) => getGameResult(g, username));
 
-	console.log(games.reduce<{ moves: number, score: number }[]>((arr, game, index) => [
+	const movesScore = games.reduce<ChartEntry[]>((arr, game, index) => [
 		...arr,
 		{
-			moves: gamesLength[index],
-			score: gamesScore[index],
+			x: gamesLength[index],
+			y: gamesScore[index],
 		},
-	], []));
+	], []);
+
+	console.log('chart', movesScore);
+
+	const chart = new Chart('chart-canvas', {
+		type: 'scatter',
+		data: {
+			datasets: [{
+				label: 'Score / Number of Moves',
+				data: averageChartEntries(movesScore),
+			}],
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+					},
+				}],
+			},
+		},
+	});
 };
+
+console.log(document.querySelector('#chart'));
 
 main();
