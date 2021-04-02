@@ -1,0 +1,14 @@
+{
+    "extends": ["airbnb-typescript/base"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+        "indent": ["error", "tab"],
+        "@typescript-eslint/indent": ["error", "tab"],
+        "no-tabs": 0,
+        "no-await-in-loop": 0
+    }
+}
