@@ -11,7 +11,7 @@ export const GameResultLabel: GameResultLabelType = {
 	[GameResult.STALEMATE]: 'Stalemate',
 	[GameResult.TIMEOUT]: 'Timeout',
 	[GameResult.INSUFFICIENT]: 'Insufficient Material',
-	[GameResult.AGREED]: 'Draw by Agreemenet',
+	[GameResult.AGREED]: 'Draw by Agreement',
 	[GameResult.TIME_VS_INSUFFICIENT]: 'Time vs Insufficient Material',
 	[GameResult.CHECKMATED]: 'Checkmated',
 	[GameResult.ABANDONED]: 'Game abandoned',

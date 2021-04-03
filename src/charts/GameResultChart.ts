@@ -10,6 +10,8 @@ const colors = [
 	'#4bc0c0',
 	'#9967ff',
 	'#cacbcf',
+	'#93eb36',
+	'#eb36d3',
 ];
 
 type GamesByResult = {
@@ -57,7 +59,6 @@ const GameResultChart = (games: Game[]) => {
 		},
 		options: {
 			legend: {
-				display: false,
 			},
 		},
 	});
