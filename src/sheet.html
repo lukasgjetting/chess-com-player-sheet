@@ -10,7 +10,7 @@
                     Player Sheet for
                     <span id="username" class="font-extralight">TODO</span>
                 </h1>
-                <button class="bg-gray-200 rounded-lg py-1 px-2 shadow-md">
+                <button class="bg-gray-200 rounded-lg py-1 px-2 shadow-sm">
                     <a href="/">Go back</a>
                 </button>
             </div>
@@ -22,8 +22,12 @@
                     <canvas id="result-by-cause"></canvas>
                 </div>
                 <div class="w-1/3 h-72 border">
-                    <canvas id="win-rate-white"></canvas>
-                    <canvas id="win-rate-black"></canvas>
+                    <div class="h-1/2 bg-gray-50 flex items-center">
+                        <canvas id="win-rate-white"></canvas>
+                    </div>
+                    <div class="h-1/2 bg-gray-800 flex items-center">
+                        <canvas id="win-rate-black"></canvas>
+                    </div>
                 </div>
             </div>
             <div class="w-full h-56 border">
@@ -34,5 +38,6 @@
                 - Email
             </div>
         </div>
+        <script src="sheet.ts"></script>
     </body>
 </html>
