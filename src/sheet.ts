@@ -7,9 +7,15 @@ const main = async () => {
 	const query = qs.parse(window.location.search.replace('?', ''));
 	const username = query.u as string;
 
-	console.log('Getting games...');
+	const usernameElement = document.querySelector<HTMLSpanElement>('#username');
+
+	if (usernameElement != null) {
+		usernameElement.innerHTML = username;
+	}
+
 	const allGames = await getGames(username);
-	console.log('Got agmes', allGames);
+
+	// Only include chess games (not custom modes)
 	const games = allGames.filter((g) => g.rules === 'chess');
 
 	// Initialize all charts
