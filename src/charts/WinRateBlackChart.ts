@@ -4,7 +4,7 @@ import calculateTotal from '../utils/calculateTotal';
 import getGameScore from '../utils/getGameScore';
 
 const WinRateBlackChart = (games: Game[], username: string): Chart => {
-	const blackGames = games.filter((g) => g.black.username === username);
+	const blackGames = games.filter((g) => g.black.username.toLowerCase() === username.toLowerCase());
 
 	const scores = blackGames.map<number>((g) => getGameScore(g, username));
 	const totalScore = calculateTotal(scores);

@@ -4,8 +4,14 @@ import getFirstMoveString from '../utils/getFirstMoveString';
 const MajorStatsChart = (games: Game[], username: string) => {
 	const sortedGames = games.sort((a, b) => a.end_time - b.end_time);
 
-	const firstGameDate = new Date(sortedGames[0].end_time * 1000);
-	const latestGameDate = new Date(sortedGames[sortedGames.length - 1].end_time * 1000);
+	const firstGameDate = (sortedGames[0] == null ?
+		new Date(0) :
+		new Date(sortedGames[0].end_time * 1000)
+	);
+	const latestGameDate = (sortedGames[sortedGames.length - 1] == null ?
+		new Date(0) :
+		new Date(sortedGames[sortedGames.length - 1].end_time * 1000)
+	);
 
 	const whiteMostPlayed = getFirstMoveString(games, username, PlayerColor.WHITE);
 	const blackMostPlayed = getFirstMoveString(games, username, PlayerColor.BLACK);

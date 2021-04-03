@@ -126,4 +126,29 @@ describe('getGameScore', () => {
 
 		expect(getGameScore(game, 'lukasgjetting')).toBe(0);
 	});
+
+	it('Returns correct score when username capitalization does not match', () => {
+		const game: Game = {
+			rules: 'chess',
+			url: 'https://www.chess.com/game/live/11042008561',
+			fen: '8/1k1p4/2p1p3/1q6/KQ6/6r1/p7/8 w - -',
+			time_class: 'rapid',
+			time_control: '600',
+			end_time: 1617303826,
+			rated: true,
+			white: {
+				rating: 1335,
+				result: GameResult.TIMEOUT,
+				username: 'badslinkie',
+			},
+			black: {
+				rating: 1305,
+				result: GameResult.WIN,
+				username: 'lukasgjetting',
+			},
+			pgn: '',
+		};
+
+		expect(getGameScore(game, 'LukasGjetting')).toBe(1);
+	});
 });

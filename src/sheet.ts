@@ -11,11 +11,8 @@ const main = async () => {
 	let currentCharts: (Chart | void)[] = [];
 	let latestRender = 0;
 
-	const renderCharts = (games: Game[]) => {
-		if (
-			games.length === 0 ||
-			Date.now() - latestRender < 5000
-		) {
+	const renderCharts = (games: Game[], force = false) => {
+		if (!force && Date.now() - latestRender < 5000) {
 			return;
 		}
 
@@ -66,7 +63,7 @@ const main = async () => {
 		renderCharts(games);
 	});
 
-	renderCharts(allGames);
+	renderCharts(allGames, true);
 
 	containerElement.classList.remove('loading', 'preview');
 };

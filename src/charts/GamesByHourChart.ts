@@ -36,7 +36,7 @@ const GamesByHourChart = (games: Game[], username: string): Chart => {
 		const gameScores = hourGames.map((g) => getGameScore(g, username));
 		const totalScore = calculateTotal(gameScores);
 
-		return totalScore / hourGames.length;
+		return Math.round((totalScore / hourGames.length) * 100) / 100;
 	});
 
 	return new Chart('games-by-hour', {

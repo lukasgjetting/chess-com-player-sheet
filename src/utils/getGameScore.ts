@@ -9,8 +9,14 @@ const getGameScore = (game: Game, username: string): number => {
 	}
 
 	if (
-		(game.black.result === GameResult.WIN && game.black.username === username) ||
-        (game.white.result === GameResult.WIN && game.white.username === username)
+		(
+			game.black.result === GameResult.WIN &&
+			game.black.username.toLowerCase() === username.toLowerCase()
+		) ||
+		(
+			game.white.result === GameResult.WIN &&
+			game.white.username.toLowerCase() === username.toLowerCase()
+		)
 	) {
 		return 1;
 	}
