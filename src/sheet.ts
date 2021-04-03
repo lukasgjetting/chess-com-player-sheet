@@ -1,11 +1,7 @@
 import qs from 'qs';
-import Chart from 'chart.js';
 import { getGames } from './lib/chess-com-api';
-import { ChartEntry } from './types';
-import averageChartEntries from './utils/averageChartEntries';
-import getGameLength from './utils/getGameLength';
-import getGameScore from './utils/getGameScore';
 import charts from './charts';
+import './utils/chart-plugins/doughnut-center-text';
 
 const main = async () => {
 	const query = qs.parse(window.location.search.replace('?', ''));

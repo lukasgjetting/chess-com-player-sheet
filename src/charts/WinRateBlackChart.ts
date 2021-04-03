@@ -1,4 +1,4 @@
-import Chart from 'chart.js';
+import Chart, { ChartElementsOptions } from 'chart.js';
 import { Game } from '../types';
 import calculateTotal from '../utils/calculateTotal';
 import getGameScore from '../utils/getGameScore';
@@ -13,6 +13,13 @@ const WinRateBlackChart = (games: Game[], username: string) => {
 
 	const data = [averageScore, 1 - averageScore];
 
+	const elements = {
+		center: {
+			text: averageScore.toFixed(2),
+			textColor: '#DDD',
+		},
+	} as ChartElementsOptions;
+
 	return new Chart('win-rate-black', {
 		type: 'doughnut',
 		data: {
@@ -23,14 +30,16 @@ const WinRateBlackChart = (games: Game[], username: string) => {
 			labels: ['Win %', 'Loss %'],
 		},
 		options: {
+			cutoutPercentage: 65,
 			legend: {
 				display: false,
 			},
 			tooltips: {
 				callbacks: {
-					label: (context) => `${Math.round(data[context.index || 0] * 100)}%`,
+					label: (context) => data[context.index || 0].toFixed(2),
 				},
 			},
+			elements,
 		},
 	});
 };
