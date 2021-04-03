@@ -1,6 +1,7 @@
-const submitButtonClick = () => {
-	const input = document.querySelector('#username-input') as HTMLInputElement;
+const input = document.querySelector('#username-input') as HTMLInputElement;
+const button = document.querySelector('#submit-button') as HTMLButtonElement;
 
+const submitButtonClick = () => {
 	const { value } = input;
 
 	if (value == null || value === '') {
@@ -12,6 +13,9 @@ const submitButtonClick = () => {
 	window.location.href = `/sheet.html?u=${value}`;
 };
 
-const button = document.querySelector('#submit-button') as HTMLButtonElement;
-
 button.addEventListener('click', submitButtonClick);
+input.addEventListener('keypress', (e) => {
+	if (e.key === 'Enter') {
+		submitButtonClick();
+	}
+});
