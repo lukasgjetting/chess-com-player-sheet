@@ -17,8 +17,6 @@ const getFirstMoveString = (games: Game[], username: string, color: PlayerColor)
 
 		const match = g.pgn.match(regex);
 
-		console.log(match);
-
 		if (match == null) {
 			return '(none)';
 		}
@@ -26,14 +24,10 @@ const getFirstMoveString = (games: Game[], username: string, color: PlayerColor)
 		return match[1];
 	});
 
-	console.log(games, username, color, colorGames);
-
 	const moveCounts = firstMoves.reduce<MoveCount>((obj, move) => ({
 		...obj,
 		[move]: (obj[move] || 0) + 1,
 	}), {});
-
-	console.log(moveCounts);
 
 	const sortedMoves = Object.entries(moveCounts).sort((a, b) => b[1] - a[1]);
 

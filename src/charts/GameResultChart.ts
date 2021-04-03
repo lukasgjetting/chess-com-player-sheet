@@ -48,8 +48,6 @@ const GameResultChart = (games: Game[]): Chart => {
 		};
 	}).sort((a, b) => b.numberOfGames - a.numberOfGames);
 
-	console.log(data);
-
 	return new Chart('result-by-cause', {
 		type: 'doughnut',
 		data: {
