@@ -28,7 +28,12 @@
                     <span id="loading-total" class="font-bold">1</span>
                     months analyzed
                 </span>
+                <button id="preview-button" class="mt-8 px-12 py-2 mb-4 bg-gray-800 text-white shadow-lg rounded-sm">
+                    Preview with current data
+                </button>
+                <span class="font-light text-gray-400">(data will continue loading in the background)</span>
             </div>
+            <div id="preview-separator" class="my-8 h-px bg-gray-300"></div>
             <div id="charts">
                 <div class="flex justify-between items-center mb-4">
                     <h1 class="text-2xl font-semibold">
@@ -89,11 +94,9 @@
                     <canvas id="games-by-hour"></canvas>
                 </div>
                 <div class="w-full h-32">
-                    - Loading
                     - Error handlers
                     - Enter to submit form
                     - Responsive
-                    - Generated date in footer
                     - Favicon
                     - Contribute
                     - Email

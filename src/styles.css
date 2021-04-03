@@ -10,8 +10,12 @@
     display: none;
 }
 
-#container.loading #charts {
+#container.loading:not(.preview) #charts {
     display: none;
+}
+
+#container:not(.preview) #preview-separator {
+  display: none;
 }
 
 .stat {

@@ -3,7 +3,7 @@ import { Game } from '../types';
 import calculateTotal from '../utils/calculateTotal';
 import getGameScore from '../utils/getGameScore';
 
-const WinRateWhiteChart = (games: Game[], username: string) => {
+const WinRateWhiteChart = (games: Game[], username: string): Chart => {
 	const whiteGames = games.filter((g) => g.white.username === username);
 
 	const scores = whiteGames.map<number>((g) => getGameScore(g, username));

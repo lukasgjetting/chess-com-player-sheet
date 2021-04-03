@@ -1,10 +1,15 @@
+import { Game } from '../types';
 import GameResultChart from './GameResultChart';
 import GamesByHourChart from './GamesByHourChart';
 import MajorStatsChart from './MajorStatsChart';
 import WinRateBlackChart from './WinRateBlackChart';
 import WinRateWhiteChart from './WinRateWhiteChart';
 
-const charts = [
+type ChartFunction = {
+	(games: Game[], username: string): Chart | void,
+};
+
+const charts: ChartFunction[] = [
 	WinRateWhiteChart,
 	WinRateBlackChart,
 	GameResultChart,

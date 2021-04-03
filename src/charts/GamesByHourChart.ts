@@ -12,7 +12,7 @@ interface GamesByHour {
 	[key: number]: Game[];
 }
 
-const GamesByHourChart = (games: Game[], username: string) => {
+const GamesByHourChart = (games: Game[], username: string): Chart => {
 	const gamesByHour = games.reduce<GamesByHour>((obj, g) => {
 		const hour = new Date(g.end_time * 1000).getHours();
 
@@ -39,7 +39,7 @@ const GamesByHourChart = (games: Game[], username: string) => {
 		return totalScore / hourGames.length;
 	});
 
-	new Chart('games-by-hour', {
+	return new Chart('games-by-hour', {
 		type: 'line',
 		data: {
 			datasets: [

@@ -18,7 +18,7 @@ type GamesByResult = {
 	[key in GameResult]?: Game[];
 };
 
-const GameResultChart = (games: Game[]) => {
+const GameResultChart = (games: Game[]): Chart => {
 	const gamesByResult = games.reduce<GamesByResult>((obj, g) => {
 		let result;
 
