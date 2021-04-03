@@ -1,4 +1,4 @@
-import { Game } from '../../types';
+import { Game, GameResult } from '../../types';
 import getGameScore from '../getGameScore';
 
 describe('getGameScore', () => {
@@ -13,12 +13,12 @@ describe('getGameScore', () => {
 			rated: true,
 			white: {
 				rating: 1335,
-				result: 'repetition',
+				result: GameResult.REPETITION,
 				username: 'badslinkie',
 			},
 			black: {
 				rating: 1305,
-				result: 'repetition',
+				result: GameResult.REPETITION,
 				username: 'lukasgjetting',
 			},
 			pgn: '',
@@ -38,12 +38,12 @@ describe('getGameScore', () => {
 			rated: true,
 			white: {
 				rating: 1335,
-				result: 'insufficient',
+				result: GameResult.INSUFFICIENT,
 				username: 'badslinkie',
 			},
 			black: {
 				rating: 1305,
-				result: 'insufficient',
+				result: GameResult.INSUFFICIENT,
 				username: 'lukasgjetting',
 			},
 			pgn: '',
@@ -63,12 +63,12 @@ describe('getGameScore', () => {
 			rated: true,
 			white: {
 				rating: 1335,
-				result: 'agreed',
+				result: GameResult.AGREED,
 				username: 'badslinkie',
 			},
 			black: {
 				rating: 1305,
-				result: 'agreed',
+				result: GameResult.AGREED,
 				username: 'lukasgjetting',
 			},
 			pgn: '',
@@ -88,12 +88,12 @@ describe('getGameScore', () => {
 			rated: true,
 			white: {
 				rating: 1335,
-				result: 'checkmated',
+				result: GameResult.CHECKMATED,
 				username: 'badslinkie',
 			},
 			black: {
 				rating: 1305,
-				result: 'win',
+				result: GameResult.WIN,
 				username: 'lukasgjetting',
 			},
 			pgn: '',
@@ -113,12 +113,12 @@ describe('getGameScore', () => {
 			rated: true,
 			white: {
 				rating: 1335,
-				result: 'win',
+				result: GameResult.WIN,
 				username: 'badslinkie',
 			},
 			black: {
 				rating: 1305,
-				result: 'timeout',
+				result: GameResult.TIMEOUT,
 				username: 'lukasgjetting',
 			},
 			pgn: '',
