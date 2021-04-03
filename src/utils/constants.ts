@@ -13,6 +13,6 @@ export const GameResultLabel: GameResultLabelType = {
 	[GameResult.INSUFFICIENT]: 'Insufficient Material',
 	[GameResult.AGREED]: 'Draw by Agreement',
 	[GameResult.TIME_VS_INSUFFICIENT]: 'Time vs Insufficient Material',
-	[GameResult.CHECKMATED]: 'Checkmated',
+	[GameResult.CHECKMATED]: 'Checkmate',
 	[GameResult.ABANDONED]: 'Game abandoned',
 };

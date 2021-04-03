@@ -59,6 +59,10 @@ const GameResultChart = (games: Game[]) => {
 		},
 		options: {
 			legend: {
+				position: 'left',
+				labels: {
+					boxWidth: 10,
+				},
 			},
 		},
 	});

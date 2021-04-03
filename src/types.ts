@@ -11,6 +11,11 @@ export enum GameResult {
 	TIME_VS_INSUFFICIENT = 'timevsinsufficient',
 }
 
+export enum PlayerColor {
+	WHITE = 'white',
+	BLACK = 'black',
+}
+
 export interface GamePlayer {
 	username: string;
 	rating: number;
@@ -30,6 +35,11 @@ export interface Game {
 	rated: boolean;
 }
 
+export interface ChartEntry {
+	x: number;
+	y: number;
+}
+
 // API responses
 export interface ArchivesListResponse {
 	archives: string[];
@@ -37,9 +47,4 @@ export interface ArchivesListResponse {
 
 export interface ArchiveGamesResponse {
 	games: Game[];
-}
-
-export interface ChartEntry {
-	x: number;
-	y: number;
 }

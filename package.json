@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "chart.js": "^2.9.4",
+    "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "qs": "^6.10.1"
   },

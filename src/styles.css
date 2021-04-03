@@ -5,3 +5,18 @@
 #container {
     max-width: 800px;
 }
+
+.stat {
+    @apply
+        flex
+        flex-col
+        w-1/4;
+}
+
+.stat > label {
+    @apply text-xs font-bold text-gray-700;
+}
+
+.stat > span {
+    @apply text-lg font-light;
+}

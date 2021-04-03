@@ -24,8 +24,6 @@ Chart.pluginService.register({
             width == null ||
             config.options?.elements == null
 		) {
-			alert('Aaa');
-			console.log(chart);
 			return;
 		}
 

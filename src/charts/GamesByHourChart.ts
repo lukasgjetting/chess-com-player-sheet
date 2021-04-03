@@ -81,8 +81,6 @@ const GamesByHourChart = (games: Game[], username: string) => {
 			},
 		},
 	});
-
-	console.log(gamesByHour);
 };
 
 export default GamesByHourChart;
