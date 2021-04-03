@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/**/*.html",
+    "build": "parcel build src/**/*.html",
     "test": "yarn jest"
   },
   "dependencies": {
