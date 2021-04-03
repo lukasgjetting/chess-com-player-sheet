@@ -1,7 +1,7 @@
 import { Game } from '../../types';
-import getGameResult from '../getGameResult';
+import getGameScore from '../getGameScore';
 
-describe('getGameResult', () => {
+describe('getGameScore', () => {
 	it('Returns 0.5 when game is drawn by repetition', () => {
 		const game: Game = {
 			rules: 'chess',
@@ -24,7 +24,7 @@ describe('getGameResult', () => {
 			pgn: '',
 		};
 
-		expect(getGameResult(game, 'lukasgjetting')).toBe(0.5);
+		expect(getGameScore(game, 'lukasgjetting')).toBe(0.5);
 	});
 
 	it('Returns 0.5 when game is drawn by insufficient material', () => {
@@ -49,7 +49,7 @@ describe('getGameResult', () => {
 			pgn: '',
 		};
 
-		expect(getGameResult(game, 'lukasgjetting')).toBe(0.5);
+		expect(getGameScore(game, 'lukasgjetting')).toBe(0.5);
 	});
 
 	it('Returns 0.5 when game is drawn by agreement', () => {
@@ -74,7 +74,7 @@ describe('getGameResult', () => {
 			pgn: '',
 		};
 
-		expect(getGameResult(game, 'lukasgjetting')).toBe(0.5);
+		expect(getGameScore(game, 'lukasgjetting')).toBe(0.5);
 	});
 
 	it('Returns 1 when given username wins by checkmate', () => {
@@ -99,7 +99,7 @@ describe('getGameResult', () => {
 			pgn: '',
 		};
 
-		expect(getGameResult(game, 'lukasgjetting')).toBe(1);
+		expect(getGameScore(game, 'lukasgjetting')).toBe(1);
 	});
 
 	it('Returns 1 when other play wins by timeout', () => {
@@ -124,6 +124,6 @@ describe('getGameResult', () => {
 			pgn: '',
 		};
 
-		expect(getGameResult(game, 'lukasgjetting')).toBe(0);
+		expect(getGameScore(game, 'lukasgjetting')).toBe(0);
 	});
 });

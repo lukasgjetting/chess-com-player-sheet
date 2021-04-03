@@ -1,17 +1,20 @@
+export enum GameResult {
+	WIN = 'win',
+	CHECKMATED = 'checkmated',
+	RESIGNED = 'resigned',
+	REPETITION = 'repetition',
+	STALEMATE = 'stalemate',
+	TIMEOUT = 'timeout',
+	INSUFFICIENT = 'insufficient',
+	ABANDONED = 'abandoned',
+	AGREED = 'agreed',
+	TIME_VS_INSUFFICIENT = 'timevsinsufficient',
+}
+
 export interface GamePlayer {
 	username: string;
 	rating: number;
-	result:
-	'win' |
-	'checkmated' |
-	'resigned' |
-	'repetition' |
-	'stalemate' |
-	'timeout' |
-	'insufficient' |
-	'abandoned' |
-	'agreed' |
-	'timevsinsufficient';
+	result: GameResult;
 }
 
 export interface Game {

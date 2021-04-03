@@ -8,9 +8,10 @@
     "rules": {
         "indent": ["error", "tab"],
         "@typescript-eslint/indent": ["error", "tab"],
+        "operator-linebreak": ["error", "after"],
         "no-tabs": 0,
         "no-await-in-loop": 0,
-        "operator-linebreak": ["error", "after"],
-        "import/prefer-default-export": 0
+        "import/prefer-default-export": 0,
+        "no-new": 0
     }
 }
