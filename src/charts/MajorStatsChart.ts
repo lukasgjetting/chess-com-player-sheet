@@ -10,23 +10,11 @@ const MajorStatsChart = (games: Game[], username: string) => {
 	const whiteMostPlayed = getFirstMoveString(games, username, PlayerColor.WHITE);
 	const blackMostPlayed = getFirstMoveString(games, username, PlayerColor.BLACK);
 
-	const numberOfGamesElement = document.querySelector<HTMLSpanElement>('#stat-number-of-games');
-	const firstGameElement = document.querySelector<HTMLSpanElement>('#stat-first-game');
-	const latestGameElement = document.querySelector<HTMLSpanElement>('#stat-latest-game');
-	const firstMoveWhiteElement = document.querySelector<HTMLSpanElement>('#stat-first-move-white');
-	const firstMoveBlackElement = document.querySelector<HTMLSpanElement>('#stat-first-move-black');
-
-	if (
-		numberOfGamesElement == null ||
-        firstGameElement == null ||
-        latestGameElement == null ||
-        firstMoveWhiteElement == null ||
-        firstMoveBlackElement == null
-	) {
-		alert('Could not find statistic elements');
-
-		return;
-	}
+	const numberOfGamesElement = document.querySelector('#stat-number-of-games') as HTMLSpanElement;
+	const firstGameElement = document.querySelector('#stat-first-game') as HTMLSpanElement;
+	const latestGameElement = document.querySelector('#stat-latest-game') as HTMLSpanElement;
+	const firstMoveWhiteElement = document.querySelector('#stat-first-move-white') as HTMLSpanElement;
+	const firstMoveBlackElement = document.querySelector('#stat-first-move-black') as HTMLSpanElement;
 
 	numberOfGamesElement.innerHTML = `${games.length}`;
 	firstGameElement.innerHTML = firstGameDate.toLocaleDateString();

@@ -14,7 +14,17 @@ const sendRequest = async (endpoint: string) => {
 	}
 };
 
-export const getGames = async (username: string) => {
+export interface ProgressParameters {
+	progress: number;
+	total: number;
+	currentMonth: string;
+	games: Game[];
+}
+
+export const getGames = async (
+	username: string,
+	progressCallback: (parameters: ProgressParameters) => void,
+) => {
 	const response: ArchivesListResponse = await sendRequest(`/player/${username}/games/archives`);
 	const endpoints = response.archives
 		.map((url) => url.replace(API_URL, ''))
@@ -23,13 +33,29 @@ export const getGames = async (username: string) => {
 
 	let games: Game[] = [];
 
+	progressCallback({
+		progress: 0,
+		total: endpoints.length,
+		currentMonth: endpoints[0].split('/games/')[1],
+		games: [],
+	});
+
 	// ESLint doesn't like using async loops
 	// However, we need the requests to not run in parallel, due to Chess.com rate limits
 	/* eslint-disable no-restricted-syntax */
-	for (const endpoint of endpoints) {
+	for (let i = 0; i < endpoints.length; i++) {
+		const endpoint = endpoints[i];
+
 		const gamesResponse: ArchiveGamesResponse = await sendRequest(endpoint);
 
 		games = [...games, ...gamesResponse.games];
+
+		progressCallback({
+			progress: i,
+			total: endpoints.length,
+			currentMonth: endpoint.split('/games/')[1],
+			games,
+		});
 	}
 	/* eslint-enable no-restricted-syntax */
 

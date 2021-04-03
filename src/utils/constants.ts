@@ -15,4 +15,5 @@ export const GameResultLabel: GameResultLabelType = {
 	[GameResult.TIME_VS_INSUFFICIENT]: 'Time vs Insufficient Material',
 	[GameResult.CHECKMATED]: 'Checkmate',
 	[GameResult.ABANDONED]: 'Game abandoned',
+	[GameResult.FIFTY_MOVE_RULE]: 'Fifty-move rule',
 };

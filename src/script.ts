@@ -1,11 +1,5 @@
 const submitButtonClick = () => {
-	const input = document.querySelector<HTMLInputElement>('#username-input');
-
-	if (input == null) {
-		alert('Cannot find input element');
-
-		return;
-	}
+	const input = document.querySelector('#username-input') as HTMLInputElement;
 
 	const { value } = input;
 
@@ -18,10 +12,6 @@ const submitButtonClick = () => {
 	window.location.href = `/sheet.html?u=${value}`;
 };
 
-const button = document.querySelector<HTMLButtonElement>('#submit-button');
+const button = document.querySelector('#submit-button') as HTMLButtonElement;
 
-if (button != null) {
-	button.addEventListener('click', submitButtonClick);
-} else {
-	alert('Cannot find button element');
-}
+button.addEventListener('click', submitButtonClick);

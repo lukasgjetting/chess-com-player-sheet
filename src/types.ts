@@ -9,6 +9,7 @@ export enum GameResult {
 	ABANDONED = 'abandoned',
 	AGREED = 'agreed',
 	TIME_VS_INSUFFICIENT = 'timevsinsufficient',
+	FIFTY_MOVE_RULE = '50move',
 }
 
 export enum PlayerColor {
