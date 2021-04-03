@@ -6,12 +6,13 @@
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint"],
     "rules": {
-        "indent": ["error", "tab"],
+        "indent": 0,
         "@typescript-eslint/indent": ["error", "tab"],
         "operator-linebreak": ["error", "after"],
         "no-tabs": 0,
         "no-await-in-loop": 0,
         "import/prefer-default-export": 0,
-        "no-new": 0
+        "no-new": 0,
+        "no-alert": 0
     }
 }

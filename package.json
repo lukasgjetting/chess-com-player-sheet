@@ -4,7 +4,7 @@
   "author": "Lukas Gjetting <lukasgjetting@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/**/*.html",
     "test": "yarn jest"
   },
   "dependencies": {
