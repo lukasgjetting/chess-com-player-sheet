@@ -21,7 +21,7 @@ I have previously used React extensively for other projects. For this project, I
 
 The UI seemed simple enough that React would be overkill. However, as I introduced more and more interactive elements, I did wonder if I should've gone with React.
 
-## Why not Webpack?
+### Why not Webpack?
 
 As the project consists of just a few TypeScript files, it felt like Webpack would be **way** overkill.
 
